@@ -1209,6 +1209,52 @@
     opacity: 1;
     transition: transform 600ms ease-out, opacity 800ms ease-out;
 }
+/* Smooth hover / lift transitions like the other file */
+.card,
+.btn,
+.nav-link,
+.side-card,
+.tag,
+.chip {
+    transition:
+        transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.24s ease,
+        border-color 0.22s ease,
+        background-color 0.22s ease,
+        color 0.22s ease;
+}
+
+.card:hover,
+.btn:hover,
+.nav-link:hover,
+.tag:hover,
+.chip:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.05);
+    cursor: pointer;
+}
+
+/* Extra glow on cards */
+.card:hover {
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+[data-theme="light"] .card:hover {
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.15);
+}
+
+/* Extra depth on buttons */
+.btn:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+/* Slight emphasis on nav links */
+.nav-link:hover {
+    filter: brightness(1.15);
+    border-color: var(--border);
+}
+
 
     </style>
 </head>
@@ -1616,7 +1662,8 @@
                             <div class="contact-icon">⏰</div>
                             <div>
                                 <div class="contact-info-text-title">Working Hours</div>
-                                <div class="contact-info-text-sub">Monday – Friday · 9am – 5pm</div>
+                                <div class="contact-info-text-sub">Available 24/7
+                                </div>
                             </div>
                         </div>
                     </div>
